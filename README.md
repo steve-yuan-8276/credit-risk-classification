@@ -16,10 +16,10 @@ The dataset used for this analysis comes from `lending_data.csv`, which includes
     
     CREDIT-RISK-CLASSIFICATION/
     ├── Credit_Risk/
-    │   ├── credit_risk_classification.ipynb  # Jupyter Notebook with analysis
-    │   ├── lending_data.csv                  # Dataset for model training and evaluation
-    ├── Credit_Risk_Analysis_Report.md # Additional analysis report
-    └── README.md                     # Project documentation (this file)
+    │   ├── credit_risk_classification.ipynb  
+    │   ├── lending_data.csv                  
+    ├── Credit_Risk_Analysis_Report.md 
+    └── README.md                     
 
 **Notes:**
 
