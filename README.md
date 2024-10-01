@@ -64,7 +64,7 @@ The logistic regression model performs well in predicting high-risk loans, makin
     0 (Low-Risk)       1.00       0.99      1.00      14981
     1 (High-Risk)      0.85       0.94      0.89        527
     
-    Accuracy                           0.99      15508
+    Accuracy                               0.99      15508
     Macro Avg         0.92       0.97      0.94      15508
     Weighted Avg      0.99       0.99      0.99      15508
 
