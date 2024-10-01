@@ -31,51 +31,46 @@ The dataset used for this analysis comes from `lending_data.csv`, which includes
 
 The analysis is broken down into the following steps:
 
-1. **Data Loading**:
+1. Data Preprocessing: Handling missing values, feature selection, and data standardization.
 
-    - The data is loaded into a Pandas DataFrame from the provided `lending_data.csv` file.
-2. **Data Preprocessing**:
+2. Model Training: Logistic regression was selected and trained on the dataset.
 
-    - Features (X) and the target variable (y) are separated.
-    - The data is split into training and testing sets using `train_test_split`.
-3. **Logistic Regression Model**:
-
-    - A logistic regression model is trained on the training data.
-    - Predictions are made using the testing dataset.
-4. **Model Evaluation**:
-
-    - The model's performance is evaluated using a confusion matrix and a classification report to assess accuracy, precision, and recall.
+3. Model Evaluation: Evaluated the model using accuracy, precision, and recall metrics.
 
 ## Results
 
 ### Logistic Regression Model:
 
-- **Accuracy**: 98%
-- **Precision**: 77% (for high-risk loans)
-- **Recall**: 94% (for high-risk loans)
+- **Accuracy**: 99%
+- **Precision (High-Risk Loans)**: 0.85
+- **Recall (High-Risk Loans)**: 0.94
 
-The logistic regression model performs well in predicting high-risk loans, making it a useful tool for financial institutions looking to assess loan applicants' credit risk.
+The logistic regression model performs well in predicting high-risk loans, making it a useful tool for financial institutions assessing credit risk. While the precision for high-risk loans is 85%, meaning that 15% of predicted high-risk loans are false positives, the recall is high at 94%, indicating that the model correctly identifies most high-risk borrowers.
 
 ### Confusion Matrix:
 
 |  | Predicted 0 | Predicted 1 | 
 | ---- | ---- | ----  |
-| Actual 0 | 1862 | 21 | 
-| Actual 1 | 23 | 71 | 
+| **Actual 0** | 14,895 | 86 | 
+| **Actual 1** | 32 | 495 | 
 
 ### Classification Report:
-    
-    
-    
-                  precision    recall  f1-score   support
-    
-    0 (Low-Risk)       0.99       0.99      0.99      1883
-    1 (High-Risk)      0.77       0.94      0.85        94
-    
-    Accuracy                           0.98      1977
-    
 
 
-Based on the results, the logistic regression model is recommended for identifying high-risk loans, particularly due to its high recall score (94%) for predicting high-risk applicants. The model correctly classifies most of the high-risk loans, which can help mitigate financial risks. However, further tuning may be required to improve precision and minimize false positives.
+
+    
+                     precision    recall  f1-score   support
+    
+    0 (Low-Risk)       1.00       0.99      1.00      14981
+    1 (High-Risk)      0.85       0.94      0.89        527
+    
+    Accuracy                           0.99      15508
+    Macro Avg         0.92       0.97      0.94      15508
+    Weighted Avg      0.99       0.99      0.99      15508
+
+
+### Summary:
+
+Based on the results, the logistic regression model is recommended for identifying high-risk loans, especially due to its strong recall score (94%) for predicting high-risk borrowers. The model accurately classifies the majority of high-risk loans, which can help reduce financial risks for lenders. However, further tuning may improve precision to reduce false positives.
 
 Thanks for your time. Have a wonderful day.

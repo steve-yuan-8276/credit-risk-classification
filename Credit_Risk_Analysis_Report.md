@@ -1,41 +1,30 @@
-# Module 12 Report Template
+# Credit Risk Classification Analysis Report
 
 ## Overview of the Analysis
 
-The purpose of this analysis is to create machine learning models that can predict the credit risk of borrowers using historical financial data. The primary goal is to classify potential loans as either high or low risk based on various features present in the dataset. This kind of classification is crucial for financial institutions to mitigate risks and ensure that they make informed lending decisions.
+The purpose of this analysis is to develop a machine learning model that predicts the credit risk of borrowers based on historical financial data. The goal is to classify loans as either high or low risk to help financial institutions mitigate risks when making lending decisions. The dataset used contains financial attributes like income, debt, and credit history. The target variable is binary: `1` for high-risk borrowers and `0` for low-risk borrowers. The main model used in this analysis is **logistic regression**.
 
-The dataset used in this analysis includes a variety of financial features about borrowers, including their income, debt, and credit history. The key target variable we are trying to predict is whether a borrower falls under the "high risk" or "low risk" category. The variable being predicted is binary, with `1` indicating a high-risk borrower and `0` indicating a low-risk borrower.
+### Stages of the Machine Learning Process:
 
-To achieve accurate predictions, several machine learning models were implemented. These models include logistic regression and random forest classifier algorithms, which went through a standard machine learning process involving data preprocessing, model training, evaluation, and refinement.
-
-The stages of the machine learning process used in this analysis were:
-
-1. Data Preprocessing: Handling missing values, feature selection, and standardizing the data.
-2. Model Training: Training the data on logistic regression and random forest classifiers.
-3. Model Evaluation: Using accuracy, precision, and recall to evaluate the models' performance.
+1. **Data Preprocessing**: Handling missing values, feature selection, and data standardization.
+2. **Model Training**: Logistic regression was selected and trained on the dataset.
+3. **Model Evaluation**: Evaluated the model using accuracy, precision, and recall metrics.
 
 ## Results
 
 ### Logistic Regression Model:
 
-- **Accuracy**: The logistic regression model achieved an accuracy score of approximately 95.7%.
-- **Precision**: The precision score for predicting high-risk loans was about 85.71%.
-- **Recall**: The recall score for high-risk loans was around 91%.
-
-### Random Forest Classifier Model:
-
-- **Accuracy**: The random forest classifier achieved a slightly lower accuracy score of approximately 93.9%.
-- **Precision**: The precision score for high-risk loans was around 84.62%.
-- **Recall**: The recall score for high-risk loans was 100%, meaning that the model captured all high-risk loans correctly.
+- **Accuracy**: 99%
+- **Precision (0 - Low Risk)**: 1.00 (Perfect precision for low-risk loans)
+- **Precision (1 - High Risk)**: 0.85 (85% of predicted high-risk loans were correct)
+- **Recall (0 - Low Risk)**: 0.99 (Identified 99% of actual low-risk loans)
+- **Recall (1 - High Risk)**: 0.94 (Identified 94% of actual high-risk loans)
+- **F1-Score (High Risk)**: 0.89 (Shows balanced precision and recall for high-risk loans)
 
 ## Summary
 
-Both machine learning models provide high accuracy, precision, and recall scores, making them viable options for predicting credit risk. However, based on the results:
-
-- The **random forest classifier** stands out for its perfect recall score (100%), meaning it correctly identified all high-risk loans. This is a critical factor in credit risk scenarios because it ensures that all potential high-risk borrowers are identified.
-
-- The logistic regression model, while slightly more accurate overall, does not have as high recall as the random forest model, making it less favorable for this specific task where identifying all high-risk loans is crucial.
+The logistic regression model achieved high performance with an overall accuracy of 99%. It performed exceptionally well in predicting low-risk loans, with perfect precision and near-perfect recall. For high-risk loans, it captured 94% of the actual high-risk cases, although its precision was slightly lower at 85%, meaning that 15% of predicted high-risk loans were false positives.
 
 ### Recommendation:
 
-Given the higher recall score of the random forest model, I would recommend using it for credit risk classification. In credit risk analysis, the ability to correctly identify high-risk loans (even at the expense of a few false positives) is often more important than overall accuracy, as it helps in minimizing financial losses due to risky loans.
+The **logistic regression model** is highly suitable for credit risk classification. Although it produced some false positives for high-risk loans, its high recall makes it a strong choice for identifying risky borrowers, which is crucial for reducing potential financial losses. Further improvements could focus on fine-tuning to enhance precision for high-risk loans while maintaining high recall.
